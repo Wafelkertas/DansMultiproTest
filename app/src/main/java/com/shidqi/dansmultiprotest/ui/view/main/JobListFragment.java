@@ -1,7 +1,6 @@
-package com.shidqi.dansmultiprotest;
+package com.shidqi.dansmultiprotest.ui.view.main;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.shidqi.dansmultiprotest.databinding.FragmentFirstBinding;
-import com.shidqi.dansmultiprotest.model.ResponseItem;
-import com.shidqi.dansmultiprotest.network.RetrofitClient;
+import com.shidqi.dansmultiprotest.databinding.FragmentJobListFragmentBinding;
+import com.shidqi.dansmultiprotest.ui.viewModel.MainViewModel;
+import com.shidqi.dansmultiprotest.R;
 
-import java.util.List;
+public class JobListFragment extends Fragment {
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class FirstFragment extends Fragment {
-
-    private FragmentFirstBinding binding;
+    private FragmentJobListFragmentBinding binding;
     private MainViewModel mainViewModel;
     @Override
     public View onCreateView(
@@ -31,7 +24,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentJobListFragmentBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
 
@@ -40,13 +33,7 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
+
     }
 
     @Override

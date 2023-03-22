@@ -1,4 +1,4 @@
-package com.shidqi.dansmultiprotest;
+package com.shidqi.dansmultiprotest.ui.view.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,14 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import com.shidqi.dansmultiprotest.databinding.FragmentSettingBinding;
+import com.shidqi.dansmultiprotest.ui.viewModel.MainViewModel;
+import com.shidqi.dansmultiprotest.R;
 
-import com.shidqi.dansmultiprotest.databinding.FragmentSecondBinding;
+public class SettingFragment extends Fragment {
 
-import java.util.Objects;
-
-public class SecondFragment extends Fragment {
-
-    private FragmentSecondBinding binding;
+    private FragmentSettingBinding binding;
     private MainViewModel mainViewModel;
 
     @Override
@@ -25,7 +24,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentSettingBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -37,7 +36,7 @@ public class SecondFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(SettingFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });

@@ -1,4 +1,4 @@
-package com.shidqi.dansmultiprotest.model;
+package com.shidqi.dansmultiprotest.data.model;
 
 import java.util.List;
 

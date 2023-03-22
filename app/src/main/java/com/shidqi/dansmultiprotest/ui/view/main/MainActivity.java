@@ -1,12 +1,8 @@
-package com.shidqi.dansmultiprotest;
+package com.shidqi.dansmultiprotest.ui.view.main;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -14,7 +10,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.shidqi.dansmultiprotest.R;
 import com.shidqi.dansmultiprotest.databinding.ActivityMainBinding;
+import com.shidqi.dansmultiprotest.ui.viewModel.MainViewModel;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
+
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
          mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
          mainViewModel.getInitialData();
 
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.my_navigation_items, menu);
         return true;
     }
 

@@ -1,4 +1,4 @@
-package com.shidqi.dansmultiprotest.model;
+package com.shidqi.dansmultiprotest.data.model;
 
 public class ResponseItem{
 	private String companyLogo;
