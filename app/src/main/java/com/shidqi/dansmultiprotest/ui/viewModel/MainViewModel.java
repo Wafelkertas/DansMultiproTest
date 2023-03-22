@@ -25,12 +25,9 @@ public class MainViewModel extends ViewModel {
     }
 
     public void getInitialData() {
-        jobsRepository.getPosition(page,new CallbackWithData<List<ResponseItem>>() {
-            @Override
-            public void execute(List<ResponseItem> data) {
-                Log.d("callbackReceived", "callbackReceived" + Arrays.toString(data.toArray()));
-                jobPositionList.setValue(data);
-            }
+        jobsRepository.getPosition(page, data -> {
+            Log.d("callbackReceived", "callbackReceived" + Arrays.toString(data.toArray()));
+            jobPositionList.setValue(data);
         });
     }
 

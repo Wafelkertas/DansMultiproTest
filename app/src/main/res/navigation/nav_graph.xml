@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.shidqi.dansmultiprotest.ui.view.main.JobListFragment"
+        android:name="com.shidqi.dansmultiprotest.ui.view.main.jobListing.JobListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_job_list_fragment">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.shidqi.dansmultiprotest.ui.view.main.SettingFragment"
+        android:name="com.shidqi.dansmultiprotest.ui.view.main.setting.SettingFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_setting">
 

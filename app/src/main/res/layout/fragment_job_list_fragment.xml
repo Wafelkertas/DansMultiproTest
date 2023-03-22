@@ -7,6 +7,7 @@
     tools:context=".ui.view.main.MainActivity">
 
     <TextView
+        android:textFontWeight="800"
         android:id="@+id/tvScreenName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +21,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_marginHorizontal="4dp"
-        app:layout_constraintBottom_toTopOf="@id/sourceContainer"
+        app:layout_constraintBottom_toTopOf="@id/jobContainer"
         android:layout_width="match_parent"
         android:id="@+id/searchContainer"
         app:layout_constraintTop_toBottomOf="@+id/tvScreenName"
@@ -65,14 +66,14 @@
             style="?android:attr/borderlessButtonStyle"
             android:background="@drawable/ic_baseline_arrow_drop_down"
             android:id="@+id/btn_dropdown"
-            android:layout_width="30dp"
+            android:layout_width="35dp"
             android:layout_marginEnd="10dp"
-            android:layout_height="30dp"/>
+            android:layout_height="35dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sourceContainer"
+        android:id="@+id/jobContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,17 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchContainer">
 
-        <TextView
-            android:id="@+id/tvSource"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Job Listing"
-            android:textFontWeight="900"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/rvSources"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSources"
@@ -100,7 +90,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSource"
+            app:layout_constraintTop_toTopOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package com.shidqi.dansmultiprotest.ui.view.main;
+package com.shidqi.dansmultiprotest.ui.view.main.setting;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
