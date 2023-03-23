@@ -4,7 +4,7 @@
         android:icon="@drawable/ic_baseline_manage_search_"
         />
     <item android:id="@+id/action_settings"
-        android:title="Setting"
-        android:icon="@drawable/ic_baseline_settings"
+        android:title="User"
+        android:icon="@drawable/ic_baseline_person"
         />
 </menu>

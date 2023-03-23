@@ -8,7 +8,7 @@
 
 
 
-    <include layout="@layout/content_main" />
+    <include android:id="@+id/content" layout="@layout/content_main" />
 
 
 

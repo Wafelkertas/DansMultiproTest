@@ -23,11 +23,17 @@ public class JobListingViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(ResponseItem data, CallbackWithData<ResponseItem> _callbackWithData) {
-        Glide.with(binding.ivNewsImage).load(data.getCompanyLogo()).error(R.drawable.placeholder).into(binding.ivNewsImage);
-        this.binding.tvJobTitle.setText(data.getTitle());
-        this.binding.tvJobGenre.setText(data.getType());
-        this.binding.tvLocation.setText(data.getLocation());
-        this.binding.getRoot().setOnClickListener(v -> _callbackWithData.execute(data));
-        this.binding.btnGoDetail.setOnClickListener(v -> _callbackWithData.execute(data));
+       if(data != null){
+           if(data.getCompanyLogo() != null){
+               Glide.with(binding.ivJobImage).load(data.getCompanyLogo()).error(R.drawable.placeholder).into(binding.ivJobImage);
+           }else{
+               Glide.with(binding.ivJobImage).load(R.drawable.placeholder).into(binding.ivJobImage);
+           }
+           if(data.getTitle() != null)this.binding.tvJobTitle.setText(data.getTitle());
+           if(data.getCompany() != null)this.binding.tvJobGenre.setText(data.getCompany());
+           if(data.getLocation() != null)this.binding.tvLocation.setText(data.getLocation());
+           this.binding.getRoot().setOnClickListener(v -> _callbackWithData.execute(data));
+           this.binding.btnGoDetail.setOnClickListener(v -> _callbackWithData.execute(data));
+       }
     }
 }
